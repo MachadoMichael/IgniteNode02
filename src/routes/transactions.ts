@@ -75,6 +75,7 @@ export const transactionsRoutes = async (app: FastifyInstance) => {
       id: randomUUID(),
       title,
       amout: type === "credit" ? amout : amout * -1,
+      session_id: sessionId,
     });
 
     return reply.status(201).send();
